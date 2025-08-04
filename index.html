@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecurePassGen - Free Strong Password Generator & Security Tool</title>
+    <meta name="description" content="Generate strong, secure passwords instantly. Free password generator with customizable options, strength checker, and security tips. Protect your accounts with unbreakable passwords.">
+    <meta name="keywords" content="password generator, strong password, secure password, random password, password security, password strength checker">
+    <link rel="canonical" href="https://securepassgen.com">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-shield-alt"></i>
+                <span>SecurePassGen</span>
+            </div>
+            <nav class="nav">
+                <a href="#generator" class="nav-link">Generator</a>
+                <a href="#checker" class="nav-link">Strength Checker</a>
+                <a href="#tips" class="nav-link">Security Tips</a>
+                <a href="#about" class="nav-link">About</a>
+            </nav>
+            <div class="language-switcher">
+                <button class="language-btn" onclick="toggleLanguage()">
+                    <i class="fas fa-globe"></i>
+                    <span>EN</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Generate Strong, Secure Passwords in Seconds</h1>
+                <p>Protect your digital life with unbreakable passwords. Our advanced generator creates random, secure passwords that keep hackers away.</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number">500M+</div>
+                        <div class="stat-text">Passwords Generated</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">99.9%</div>
+                        <div class="stat-text">Security Rating</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">2M+</div>
+                        <div class="stat-text">Happy Users</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Generator Section -->
+    <section id="generator" class="generator-section">
+        <div class="container">
+            <div class="generator-card">
+                <h2>Password Generator</h2>
+                
+                <!-- Generated Password Display -->
+                <div class="password-display">
+                    <div class="password-container">
+                        <input type="text" id="generatedPassword" class="password-input" readonly value="Click Generate to create a password">
+                        <button class="copy-btn" onclick="copyPassword()" title="Copy to clipboard">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="password-strength">
+                        <div class="strength-bar">
+                            <div class="strength-fill" id="strengthFill"></div>
+                        </div>
+                        <span class="strength-text" id="strengthText">Click Generate</span>
+                    </div>
+                </div>
+
+                <!-- Generator Options -->
+                <div class="generator-options">
+                    <div class="option-group">
+                        <label class="option-label">
+                            Password Length: <span id="lengthDisplay">12</span>
+                        </label>
+                        <input type="range" id="passwordLength" min="8" max="50" value="12" class="slider">
+                    </div>
+
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="includeUppercase" checked>
+                            <span class="checkmark"></span>
+                            Uppercase Letters (A-Z)
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="includeLowercase" checked>
+                            <span class="checkmark"></span>
+                            Lowercase Letters (a-z)
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="includeNumbers" checked>
+                            <span class="checkmark"></span>
+                            Numbers (0-9)
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="includeSymbols" checked>
+                            <span class="checkmark"></span>
+                            Symbols (!@#$%^&*)
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="excludeSimilar">
+                            <span class="checkmark"></span>
+                            Exclude Similar Characters (i, l, 1, L, o, 0, O)
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Generate Button -->
+                <button class="generate-btn" onclick="generatePassword()">
+                    <i class="fas fa-refresh"></i>
+                    Generate Strong Password
+                </button>
+
+                <!-- Quick Actions -->
+                <div class="quick-actions">
+                    <button class="quick-btn" onclick="setQuickOption(8, false, false, false, false)">
+                        <i class="fas fa-mobile-alt"></i>
+                        Mobile Friendly
+                    </button>
+                    <button class="quick-btn" onclick="setQuickOption(16, true, true, true, true)">
+                        <i class="fas fa-shield-alt"></i>
+                        Maximum Security
+                    </button>
+                    <button class="quick-btn" onclick="setQuickOption(12, true, true, true, false)">
+                        <i class="fas fa-balance-scale"></i>
+                        Balanced
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Password Strength Checker -->
+    <section id="checker" class="checker-section">
+        <div class="container">
+            <div class="checker-card">
+                <h2>Password Strength Checker</h2>
+                <p>Test the strength of your existing passwords</p>
+                
+                <div class="checker-input">
+                    <div class="input-container">
+                        <input type="password" id="passwordToCheck" placeholder="Enter your password to check its strength" class="check-input">
+                        <button class="toggle-visibility" onclick="togglePasswordVisibility()" title="Show/Hide password">
+                            <i class="fas fa-eye" id="eyeIcon"></i>
+                        </button>
+                    </div>
+                    <div class="check-results" id="checkResults">
+                        <div class="strength-meter">
+                            <div class="meter-bar">
+                                <div class="meter-fill" id="meterFill"></div>
+                            </div>
+                            <div class="meter-text" id="meterText">Enter a password to check</div>
+                        </div>
+                        <div class="criteria-list" id="criteriaList">
+                            <div class="criterion" data-type="length">
+                                <i class="fas fa-times"></i>
+                                <span>At least 8 characters</span>
+                            </div>
+                            <div class="criterion" data-type="uppercase">
+                                <i class="fas fa-times"></i>
+                                <span>Contains uppercase letters</span>
+                            </div>
+                            <div class="criterion" data-type="lowercase">
+                                <i class="fas fa-times"></i>
+                                <span>Contains lowercase letters</span>
+                            </div>
+                            <div class="criterion" data-type="numbers">
+                                <i class="fas fa-times"></i>
+                                <span>Contains numbers</span>
+                            </div>
+                            <div class="criterion" data-type="symbols">
+                                <i class="fas fa-times"></i>
+                                <span>Contains special characters</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security Tips Section -->
+    <section id="tips" class="tips-section">
+        <div class="container">
+            <h2>Password Security Best Practices</h2>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <h3>Use Unique Passwords</h3>
+                    <p>Never reuse passwords across multiple accounts. Each service should have its own unique, strong password.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-shield-virus"></i>
+                    </div>
+                    <h3>Enable Two-Factor Authentication</h3>
+                    <p>Add an extra layer of security by enabling 2FA on all your important accounts whenever possible.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>Update Passwords Regularly</h3>
+                    <p>Change your passwords periodically, especially for critical accounts like banking and email.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-user-secret"></i>
+                    </div>
+                    <h3>Use a Password Manager</h3>
+                    <p>Password managers help you store and generate strong passwords securely without memorizing them.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <h3>Avoid Public WiFi for Sensitive Activities</h3>
+                    <p>Don't enter passwords on public WiFi networks. Use a VPN or wait for a secure connection.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h3>Watch for Phishing Attempts</h3>
+                    <p>Always verify the website URL before entering your password. Be suspicious of unexpected login requests.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>Is it safe to use an online password generator?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, our password generator is completely safe. All passwords are generated locally in your browser using JavaScript. We don't store, transmit, or have access to any passwords you generate.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>How long should my password be?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We recommend at least 12 characters for most accounts, and 16+ characters for highly sensitive accounts like banking or email. Longer passwords are exponentially harder to crack.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>Should I include special characters in my password?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, including special characters significantly increases password strength. However, make sure the service you're using supports the special characters you choose.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>How often should I change my passwords?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Change passwords immediately if you suspect they've been compromised. For regular updates, every 3-6 months is reasonable for important accounts, though using strong, unique passwords is more important than frequent changes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <h2>About SecurePassGen</h2>
+                <p>SecurePassGen is a free, secure password generator designed to help you create strong, unique passwords for all your online accounts. Our mission is to make cybersecurity accessible to everyone.</p>
+                
+                <div class="features-grid">
+                    <div class="feature">
+                        <i class="fas fa-lock"></i>
+                        <h3>100% Secure</h3>
+                        <p>All passwords are generated locally in your browser. Nothing is stored or transmitted.</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>Mobile Friendly</h3>
+                        <p>Works perfectly on all devices - desktop, tablet, and mobile.</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-globe"></i>
+                        <h3>Free Forever</h3>
+                        <p>Our password generator will always be free to use, no registration required.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>SecurePassGen</span>
+                    </div>
+                    <p>Creating strong passwords for a safer digital world.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Tools</h4>
+                    <ul>
+                        <li><a href="#generator">Password Generator</a></li>
+                        <li><a href="#checker">Strength Checker</a></li>
+                        <li><a href="#tips">Security Tips</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="/blog">Security Blog</a></li>
+                        <li><a href="/privacy">Privacy Policy</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SecurePassGen. All rights reserved. | Keeping your digital life secure.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
