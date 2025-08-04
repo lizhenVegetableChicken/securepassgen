@@ -6,7 +6,7 @@
 
     <!-- Homepage -->
     <url>
-        <loc>https://securepassgen.com/</loc>
+        <loc>https://securepassgen-two.vercel.app/</loc>
         <lastmod>2024-12-15</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
@@ -14,7 +14,7 @@
 
     <!-- Password Generator Tool -->
     <url>
-        <loc>https://securepassgen.com/#generator</loc>
+        <loc>https://securepassgen-two.vercel.app/#generator</loc>
         <lastmod>2024-12-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
@@ -22,7 +22,7 @@
 
     <!-- Password Strength Checker -->
     <url>
-        <loc>https://securepassgen.com/#checker</loc>
+        <loc>https://securepassgen-two.vercel.app/#checker</loc>
         <lastmod>2024-12-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
@@ -30,7 +30,7 @@
 
     <!-- Security Tips Section -->
     <url>
-        <loc>https://securepassgen.com/#tips</loc>
+        <loc>https://securepassgen-two.vercel.app/#tips</loc>
         <lastmod>2024-12-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
@@ -38,7 +38,7 @@
 
     <!-- Blog Homepage -->
     <url>
-        <loc>https://securepassgen.com/blog/</loc>
+        <loc>https://securepassgen-two.vercel.app/blog/</loc>
         <lastmod>2024-12-15</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -46,7 +46,7 @@
 
     <!-- Privacy Policy -->
     <url>
-        <loc>https://securepassgen.com/privacy.html</loc>
+        <loc>https://securepassgen-two.vercel.app/privacy.html</loc>
         <lastmod>2024-12-15</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
@@ -54,7 +54,7 @@
 
     <!-- Contact Page -->
     <url>
-        <loc>https://securepassgen.com/contact.html</loc>
+        <loc>https://securepassgen-two.vercel.app/contact.html</loc>
         <lastmod>2024-12-15</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.4</priority>
@@ -62,7 +62,7 @@
 
     <!-- About Section -->
     <url>
-        <loc>https://securepassgen.com/#about</loc>
+        <loc>https://securepassgen-two.vercel.app/#about</loc>
         <lastmod>2024-12-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>

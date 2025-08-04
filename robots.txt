@@ -13,7 +13,7 @@ Disallow: /.git/
 Disallow: /node_modules/
 
 # Sitemap location
-Sitemap: https://securepassgen.com/sitemap.xml
+Sitemap: https://securepassgen-two.vercel.app/sitemap.xml
 
 # Crawl delay (optional)
 Crawl-delay: 1 
