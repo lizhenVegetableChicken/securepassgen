@@ -5,8 +5,8 @@
   "main": "index.html",
   "scripts": {
     "start": "npx serve .",
-    "build": "echo 'No build process needed for static site'",
-    "deploy": "echo 'Deploy to Vercel or your preferred hosting service'"
+    "build": "echo 'Static site - no build required'",
+    "deploy": "vercel --prod"
   },
   "keywords": [
     "password generator",
