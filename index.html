@@ -1,16 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZKLFQJX755"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-ZKLFQJX755');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SecurePassGen - Free Strong Password Generator & Security Tool</title>
-    <meta name="description" content="Generate strong, secure passwords instantly. Free password generator with customizable options, strength checker, and security tips. Protect your accounts with unbreakable passwords.">
-    <meta name="keywords" content="password generator, strong password, secure password, random password, password security, password strength checker">
+    <meta name="description"
+        content="Generate strong, secure passwords instantly. Free password generator with customizable options, strength checker, and security tips. Protect your accounts with unbreakable passwords.">
+    <meta name="keywords"
+        content="password generator, strong password, secure password, random password, password security, password strength checker">
     <link rel="canonical" href="https://securepassgen.com">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
     <!-- Header -->
     <header class="header">
@@ -40,7 +53,8 @@
         <div class="container">
             <div class="hero-content">
                 <h1>Generate Strong, Secure Passwords in Seconds</h1>
-                <p>Protect your digital life with unbreakable passwords. Our advanced generator creates random, secure passwords that keep hackers away.</p>
+                <p>Protect your digital life with unbreakable passwords. Our advanced generator creates random, secure
+                    passwords that keep hackers away.</p>
                 <div class="hero-stats">
                     <div class="stat">
                         <div class="stat-number">500M+</div>
@@ -64,11 +78,12 @@
         <div class="container">
             <div class="generator-card">
                 <h2>Password Generator</h2>
-                
+
                 <!-- Generated Password Display -->
                 <div class="password-display">
                     <div class="password-container">
-                        <input type="text" id="generatedPassword" class="password-input" readonly value="Click Generate to create a password">
+                        <input type="text" id="generatedPassword" class="password-input" readonly
+                            value="Click Generate to create a password">
                         <button class="copy-btn" onclick="copyPassword()" title="Copy to clipboard">
                             <i class="fas fa-copy"></i>
                         </button>
@@ -150,11 +165,13 @@
             <div class="checker-card">
                 <h2>Password Strength Checker</h2>
                 <p>Test the strength of your existing passwords</p>
-                
+
                 <div class="checker-input">
                     <div class="input-container">
-                        <input type="password" id="passwordToCheck" placeholder="Enter your password to check its strength" class="check-input">
-                        <button class="toggle-visibility" onclick="togglePasswordVisibility()" title="Show/Hide password">
+                        <input type="password" id="passwordToCheck"
+                            placeholder="Enter your password to check its strength" class="check-input">
+                        <button class="toggle-visibility" onclick="togglePasswordVisibility()"
+                            title="Show/Hide password">
                             <i class="fas fa-eye" id="eyeIcon"></i>
                         </button>
                     </div>
@@ -203,14 +220,16 @@
                         <i class="fas fa-key"></i>
                     </div>
                     <h3>Use Unique Passwords</h3>
-                    <p>Never reuse passwords across multiple accounts. Each service should have its own unique, strong password.</p>
+                    <p>Never reuse passwords across multiple accounts. Each service should have its own unique, strong
+                        password.</p>
                 </div>
                 <div class="tip-card">
                     <div class="tip-icon">
                         <i class="fas fa-shield-virus"></i>
                     </div>
                     <h3>Enable Two-Factor Authentication</h3>
-                    <p>Add an extra layer of security by enabling 2FA on all your important accounts whenever possible.</p>
+                    <p>Add an extra layer of security by enabling 2FA on all your important accounts whenever possible.
+                    </p>
                 </div>
                 <div class="tip-card">
                     <div class="tip-icon">
@@ -224,7 +243,8 @@
                         <i class="fas fa-user-secret"></i>
                     </div>
                     <h3>Use a Password Manager</h3>
-                    <p>Password managers help you store and generate strong passwords securely without memorizing them.</p>
+                    <p>Password managers help you store and generate strong passwords securely without memorizing them.
+                    </p>
                 </div>
                 <div class="tip-card">
                     <div class="tip-icon">
@@ -238,7 +258,8 @@
                         <i class="fas fa-exclamation-triangle"></i>
                     </div>
                     <h3>Watch for Phishing Attempts</h3>
-                    <p>Always verify the website URL before entering your password. Be suspicious of unexpected login requests.</p>
+                    <p>Always verify the website URL before entering your password. Be suspicious of unexpected login
+                        requests.</p>
                 </div>
             </div>
         </div>
@@ -255,7 +276,9 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Yes, our password generator is completely safe. All passwords are generated locally in your browser using JavaScript. We don't store, transmit, or have access to any passwords you generate.</p>
+                        <p>Yes, our password generator is completely safe. All passwords are generated locally in your
+                            browser using JavaScript. We don't store, transmit, or have access to any passwords you
+                            generate.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -264,7 +287,9 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>We recommend at least 12 characters for most accounts, and 16+ characters for highly sensitive accounts like banking or email. Longer passwords are exponentially harder to crack.</p>
+                        <p>We recommend at least 12 characters for most accounts, and 16+ characters for highly
+                            sensitive accounts like banking or email. Longer passwords are exponentially harder to
+                            crack.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -273,7 +298,8 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Yes, including special characters significantly increases password strength. However, make sure the service you're using supports the special characters you choose.</p>
+                        <p>Yes, including special characters significantly increases password strength. However, make
+                            sure the service you're using supports the special characters you choose.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -282,7 +308,9 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Change passwords immediately if you suspect they've been compromised. For regular updates, every 3-6 months is reasonable for important accounts, though using strong, unique passwords is more important than frequent changes.</p>
+                        <p>Change passwords immediately if you suspect they've been compromised. For regular updates,
+                            every 3-6 months is reasonable for important accounts, though using strong, unique passwords
+                            is more important than frequent changes.</p>
                     </div>
                 </div>
             </div>
@@ -294,8 +322,10 @@
         <div class="container">
             <div class="about-content">
                 <h2>About SecurePassGen</h2>
-                <p>SecurePassGen is a free, secure password generator designed to help you create strong, unique passwords for all your online accounts. Our mission is to make cybersecurity accessible to everyone.</p>
-                
+                <p>SecurePassGen is a free, secure password generator designed to help you create strong, unique
+                    passwords for all your online accounts. Our mission is to make cybersecurity accessible to everyone.
+                </p>
+
                 <div class="features-grid">
                     <div class="feature">
                         <i class="fas fa-lock"></i>
@@ -361,4 +391,5 @@
 
     <script src="script.js"></script>
 </body>
-</html> 
+
+</html>
